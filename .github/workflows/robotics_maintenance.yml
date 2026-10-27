@@ -14,5 +14,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install requests
+      - run: pip install requests fastapi uvicorn
+      - name: Start Factory API
+        run: python _m uvicorn factory_API:app --host 127.0.0.1 --port 8000 &
+      - name: Wait for API
+        run: sleep 5
       - run: python robotics_maintenance.py

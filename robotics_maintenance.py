@@ -330,8 +330,7 @@ print('\nHighest Power Consumption of the robot above:' '\tID:',robot_stop_and_i
 print('\nNumber of Robots requiring Attention:',number_count)
 
 webhook_url = "http://localhost:5678/webhook/32ff7ec8-5c95-4034-aa51-60c155135cae"
-dashboard_webhook_url = "https://sert333.app.n8n.cloud/webhook/d7992127-5b0d-4bab-9c79-952a936e80ba"
-
+dashboard_webhook_url = "http://localhost:5678/webhook/robot-dashboard-view"
 responds = requests.post(webhook_url, json = robots)
 
 dashboard_responds = requests.post(dashboard_webhook_url, json = robots)
